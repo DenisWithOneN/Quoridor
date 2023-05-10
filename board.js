@@ -75,4 +75,9 @@ function mouseClicked() {
     }
   }
 
-
+  function resetColors() {
+    for (let i = 0; i < totalBoardSquares.length; i++) {
+      let boardSquare = totalBoardSquares[i];
+      boardSquare.color = color("#00FFCA");
+    }
+  }
