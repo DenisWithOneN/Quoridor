@@ -1,6 +1,6 @@
 let columns = 9;
 let rows = 9;
-let spacing = 10;
+let spacing = 7;
 let totalBoardSquares = [];
 
 function initSquares() {
