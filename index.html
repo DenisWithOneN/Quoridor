@@ -5,22 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quoridor</title>
-    <link rel="sylesheet" href="style.css" />
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
 
     <script src="vendor/p5.min.js"></script>
     <script src="main.js"></script>
     <script src="board.js"></script>
   </head>
   <body>
-    <button onclick="resetColors()">Reset Colors</button>
+    <button
+      onclick="resetColors()"
+      style="
+        background: none;
+        color: #05bfdb;
+        border: 5px solid #05bfdb;
+        border-radius: 25px;
+        width: 150px;
+        height: 50px;
+        margin: 5px;
+        float: right;
+      "
+    >
+      <div style="clear: both"></div>
+      Reset Colors
+    </button>
 
     <div>
-        <label for="playerName">Enter player name:</label>
-        <input type="text" id="playerName">
-        <button onclick="updatePlayerName()">Submit</button>
-      </div>
-      <div>
-        <p>Player name: <span id="playerNameDisplay"></span></p>
-      </div>
+      <label
+        for="playerName"
+        style="
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+            sans-serif;
+          font-size: 20px;
+          color: #0a4d68;
+        "
+        >Enter player name:</label
+      >
+      <input
+        type="text"
+        id="playerName"
+        style="margin: 10px; border-color: #0a4d68"
+      />
+      <button
+        onclick="updatePlayerName()"
+        style="
+          background: none;
+          color: #0a4d68;
+          border: 2px solid #0a4d68;
+          border-radius: 25px;
+          width: 100px;
+          height: 25px;
+          margin-left: 120px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        Submit
+      </button>
+    </div>
+    <div>
+      <p
+        style="
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 20px;
+          margin: 50px;
+          color: #0a4d68;
+          float: right;
+        "
+      >
+        Player name: <span id="playerNameDisplay"></span>
+      </p>
+    </div>
   </body>
 </html>

@@ -65,6 +65,8 @@ function createSquares() {
 
 }
 
+// interactive
+
 function mouseClicked() {
     for (let i = 0; i < totalBoardSquares.length; i++) {
       let boardSquare = totalBoardSquares[i];
