@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Quoridor</title>
 
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-    <script src="vendor/p5.min.js"></script>
-    <script src="main.js"></script>
-    <script src="board.js"></script>
+    
   </head>
   <body>
     <button
+    class="temporary"
       onclick="resetColors()"
       style="
-        background: none;
-        color: #05bfdb;
+      
         border: 5px solid #05bfdb;
         border-radius: 25px;
         width: 150px;
@@ -80,5 +78,10 @@
         Player name: <span id="playerNameDisplay"></span>
       </p>
     </div>
+
+    <script src="vendor/p5.min.js"></script>
+    <script src="main.js"></script>
+    <script src="board.js"></script>
+
   </body>
 </html>
