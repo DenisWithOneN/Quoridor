@@ -1,4 +1,38 @@
-.temporary {
-    background: none;
-        color: red;
+.resetbuttonStyle {
+  background: none;
+  color: #05bfdb;
+  border: 5px solid #05bfdb;
+  border-radius: 25px;
+  width: 150px;
+  height: 50px;
+  margin: 10px;
+  float: right;
+  position: absolute;
+  right: 100px;
+  top: 50px;
+}
+
+.playernameTextStyle {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+  color: #0a4d68;
+}
+
+.playernameButtonStyle {
+  background: none;
+  color: #0a4d68;
+  border: 2px solid #0a4d68;
+  border-radius: 25px;
+  width: 100px;
+  height: 25px;
+  margin-left: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customtextlabelStyle {
+  /* style for every text label */
+  margin: 10px;
+  border-color: #0a4d68;
 }
