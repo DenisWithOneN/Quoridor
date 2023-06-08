@@ -12,7 +12,7 @@ function initSquares() {
         x: columns * i * spacing + 165,
         y: rows * j * spacing + 60,
         size: 50,
-        color: color("#00FFCA"),
+        color: color("#B4CFB0"),
       };
 
       let leftBoardRectangle = {
@@ -20,7 +20,7 @@ function initSquares() {
         y: rows * j * spacing + 60,
         width: 100,
         height: 50,
-        color: color("#00FFCA"),
+        color: color("#B4CFB0"),
       };
 
       let rightBoardRectangle = {
@@ -28,7 +28,7 @@ function initSquares() {
         y: rows * j * spacing + 60,
         width: 100,
         height: 50,
-        color: color("#00FFCA"),
+        color: color("#B4CFB0"),
       };
 
       totalBoardSquares.push(boardSquare);
@@ -72,7 +72,7 @@ function mouseClicked() {
       let boardSquare = totalBoardSquares[i];
       if (mouseX > boardSquare.x && mouseX < boardSquare.x + boardSquare.size && mouseY > boardSquare.y && mouseY < boardSquare.y + boardSquare.size) {
         // change color of the square
-        boardSquare.color = color("#0A4D68");
+        boardSquare.color = color("#E5E3C9");
       }
     }
   }
@@ -80,6 +80,6 @@ function mouseClicked() {
   function resetColors() {
     for (let i = 0; i < totalBoardSquares.length; i++) {
       let boardSquare = totalBoardSquares[i];
-      boardSquare.color = color("#00FFCA");
+      boardSquare.color = color("#B4CFB0");
     }
   }

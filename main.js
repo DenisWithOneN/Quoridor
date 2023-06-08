@@ -9,7 +9,7 @@ function setup() {
 }
 
 function draw() {
-  background("#088395");
+  background("#789395");
   createSquares();
 
   
