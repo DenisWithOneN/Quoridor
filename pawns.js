@@ -3,12 +3,12 @@ class Pawn {
       this.x = x;
       this.y = y;
       this.color = color;
-      this.pawnMoveDistance = 80;
+      this.pawnMoveDistance = 90;
     }
   
     show() {
       fill(this.color);
-      circle(this.x, this.y, 40);
+      circle(this.x, this.y, 50);
     }
   
     move() {
@@ -48,8 +48,8 @@ class Pawn {
     }
   }
   
-  let firstPlayerPawn = new Pawn(635, 818, "blue");
-  let secondPlayerPawn = new Pawn(555, 88, "red");
+  let firstPlayerPawn = new Pawn(630, 900, "blue");
+  let secondPlayerPawn = new Pawn(540, 90, "red");
   
   function createPawns() {
     firstPlayerPawn.show();
