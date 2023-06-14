@@ -1,9 +1,9 @@
+let quoridorBoard;
+
 function setup() {
   canvas = createCanvas(1200, 900);
-  let canvasX = (windowWidth - width) / 2;
-  let canvasY = (windowHeight - height) / 2;
-  canvas.position(canvasX, canvasY);
-  initSquares();
+  quoridorBoard = new Board(9,9,9,10);
+  quoridorBoard.initSquares;
   playerNameInput = document.querySelector('#playerName');
 }
 
