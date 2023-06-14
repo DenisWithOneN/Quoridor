@@ -17,6 +17,7 @@ function draw() {
   quoridorBoard.createSquares();
   createPawns();
   
+  
 }
 
 function keyPressed() {
