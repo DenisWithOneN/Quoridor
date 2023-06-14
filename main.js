@@ -1,18 +1,31 @@
-function setup() {
-  canvas = createCanvas(950, 750);
-  let canvasX = (windowWidth - width) / 2;
-  let canvasY = (windowHeight - height) / 2;
-  canvas.position(canvasX, canvasY);
+let quoridorBoard;
 
-  initSquares();
+function setup() {
+  let canvasWidth = 1200;
+  let canvasHeight = 900;
+  let canvasX = (windowWidth - canvasWidth) / 2;
+  let canvasY = (windowHeight - canvasHeight) / 2;
+  canvas = createCanvas(canvasWidth, canvasHeight);
+  canvas.position(canvasX, canvasY);
   playerNameInput = document.querySelector('#playerName');
+  quoridorBoard = new Board(9,9,10,10);
+  quoridorBoard.initSquares();
 }
 
 function draw() {
   background("#789395");
-  createSquares();
-
+  quoridorBoard.createSquares();
+  createPawns();
   
+}
+
+function keyPressed() {
+  movePawns();
+}
+
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function updatePlayerName() {
