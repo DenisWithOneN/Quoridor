@@ -1,6 +1,6 @@
 let columns = 9;
 let rows = 9;
-let spacing = 7;
+let spacing = 9;
 let boardMargin = 10;
 let totalBoardSquares = [];
 let totalBoardRectangles = [];
@@ -8,10 +8,11 @@ let totalBoardRectangles = [];
 function initSquares() {
   for (let i = 0; i <= columns; i++)
     for (let j = 0; j <= rows; j++) {
+
       let boardSquare = {
-        x: columns * i * spacing + 165,
+        x: columns * i * spacing + 200,
         y: rows * j * spacing + 60,
-        size: 50,
+        size: 60,
         color: color("#B4CFB0"),
       };
 
@@ -24,7 +25,7 @@ function initSquares() {
       };
 
       let rightBoardRectangle = {
-        x: 810,
+        x: 1050,
         y: rows * j * spacing + 60,
         width: 100,
         height: 50,
