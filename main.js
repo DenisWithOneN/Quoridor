@@ -14,8 +14,7 @@ function draw() {
 }
 
 function keyPressed() {
-  moveFirstPlayerPawn();
-  moveSecondPlayerPawn();
+  movePawns();
 }
 
 
