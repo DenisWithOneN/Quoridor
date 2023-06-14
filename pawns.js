@@ -1,11 +1,11 @@
-let a = 635;
-let b = 818;
+let firstPlayerX = 635;
+let firstPlayerY = 818;
 let pawnMoveDistance = 80;
 
 
 function createPawns() {
   fill("blue");
-  circle(a, b, 40);
+  circle(firstPlayerX, firstPlayerY, 40);
 
   fill("red");
   circle(555, 88, 40);
@@ -13,18 +13,18 @@ function createPawns() {
 
 function movePawn() {
   if (keyCode === UP_ARROW) {
-    b -= pawnMoveDistance;
+    firstPlayerY -= pawnMoveDistance;
   }
 
   if (keyCode === DOWN_ARROW) {
-    b += pawnMoveDistance;  
+    firstPlayerY += pawnMoveDistance;  
   }
 
   if (keyCode === LEFT_ARROW) {
-    a -= pawnMoveDistance;
+    firstPlayerX -= pawnMoveDistance;
   }
 
   if (keyCode === RIGHT_ARROW) {
-    a+= pawnMoveDistance;
+    firstPlayerX += pawnMoveDistance;
   }
 }
