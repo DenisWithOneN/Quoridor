@@ -12,7 +12,7 @@ class Pawn {
     }
   
     move() {
-      if (this.color === "blue") {
+      if (this.color === "white") {
         if (keyCode === UP_ARROW) {
           this.y -= this.pawnMoveDistance;
         }
@@ -28,7 +28,7 @@ class Pawn {
         if (keyCode === RIGHT_ARROW) {
           this.x += this.pawnMoveDistance;
         }
-      } else if (this.color === "red") {
+      } else if (this.color === "black") {
         if (keyIsDown(87)) { // W key
           this.y -= this.pawnMoveDistance;
         }
@@ -48,8 +48,8 @@ class Pawn {
     }
   }
   
-  let firstPlayerPawn = new Pawn(590, 810, "blue");
-  let secondPlayerPawn = new Pawn(590, 90, "red");
+  let firstPlayerPawn = new Pawn(590, 810, "white");
+  let secondPlayerPawn = new Pawn(590, 90, "black");
   
   function createPawns() {
     firstPlayerPawn.show();
