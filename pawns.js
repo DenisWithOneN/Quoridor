@@ -1,6 +1,6 @@
 let a = 635;
 let b = 818;
-let pawnMoveDistance = 20;
+let pawnMoveDistance = 80;
 
 
 function createPawns() {
