@@ -2,15 +2,16 @@ let quoridorBoard;
 
 function setup() {
   canvas = createCanvas(1200, 900);
-  quoridorBoard = new Board(9,9,9,10);
-  quoridorBoard.initSquares;
   playerNameInput = document.querySelector('#playerName');
+  quoridorBoard = new Board(9,9,9,10);
+  quoridorBoard.initSquares();
 }
 
 function draw() {
   background("#789395");
-  createSquares();
+  quoridorBoard.createSquares();
   createPawns();
+  
 }
 
 function keyPressed() {

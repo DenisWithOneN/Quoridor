@@ -45,9 +45,9 @@ class Board {
             let boardSquare = this.totalBoardSquares[i];
             fill(boardSquare.color); 
             square(boardSquare.x, boardSquare.y, boardSquare.size);
-    }
+        }
 
-    for (let j = 0; j < this.totalBoardRectangles.length; j++) {
+        for (let j = 0; j < this.totalBoardRectangles.length; j++) {
         let leftBoardRectangle = this.totalBoardRectangles[j];
         let rightBoardRectangle = this.totalBoardRectangles[j];
         fill(leftBoardRectangle.color);
@@ -66,5 +66,6 @@ class Board {
       }
     }
   }
+  
 
  
