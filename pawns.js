@@ -1,51 +1,62 @@
-let firstPlayerX = 635;
-let firstPlayerY = 818;
-let secondPlayerX = 555;
-let secondPlayerY = 88;
-let pawnMoveDistance = 80;
-
-
-function createPawns() {
-  fill("blue");
-  circle(firstPlayerX, firstPlayerY, 40);
-
-  fill("red");
-  circle(secondPlayerX, secondPlayerY, 40);
-}
-
-function moveFirstPlayerPawn() {
-  if (keyCode === UP_ARROW) {
-    firstPlayerY -= pawnMoveDistance;
-  }
-
-  if (keyCode === DOWN_ARROW) {
-    firstPlayerY += pawnMoveDistance;  
-  }
-
-  if (keyCode === LEFT_ARROW) {
-    firstPlayerX -= pawnMoveDistance;
-  }
-
-  if (keyCode === RIGHT_ARROW) {
-    firstPlayerX += pawnMoveDistance;
-  }
-}
-
-function moveSecondPlayerPawn() {
-    if (keyIsDown(87)) {
-        console.log("test") // W key
-        secondPlayerY -= pawnMoveDistance;
+class Pawn {
+    constructor(x, y, color) {
+      this.x = x;
+      this.y = y;
+      this.color = color;
+      this.pawnMoveDistance = 80;
+    }
+  
+    show() {
+      fill(this.color);
+      circle(this.x, this.y, 40);
+    }
+  
+    move() {
+      if (this.color === "blue") {
+        if (keyCode === UP_ARROW) {
+          this.y -= this.pawnMoveDistance;
+        }
+      
+        if (keyCode === DOWN_ARROW) {
+          this.y += this.pawnMoveDistance;  
+        }
+      
+        if (keyCode === LEFT_ARROW) {
+          this.x -= this.pawnMoveDistance;
+        }
+      
+        if (keyCode === RIGHT_ARROW) {
+          this.x += this.pawnMoveDistance;
+        }
+      } else if (this.color === "red") {
+        if (keyIsDown(87)) { // W key
+          this.y -= this.pawnMoveDistance;
+        }
+      
+        if (keyIsDown(83)) { // S key
+          this.y += this.pawnMoveDistance;  
+        }
+      
+        if (keyIsDown(65)) { // A key
+          this.x -= this.pawnMoveDistance;
+        }
+      
+        if (keyIsDown(68)) { //D key
+          this.x += this.pawnMoveDistance;
+        }
       }
-    
-      if (keyIsDown(83)) { // S key
-        secondPlayerY += pawnMoveDistance;  
-      }
-    
-      if (keyIsDown(65)) { // A key
-        secondPlayerX -= pawnMoveDistance;
-      }
-    
-      if (keyIsDown(68)) { //D key
-        secondPlayerX += pawnMoveDistance;
-      }
-}
+    }
+  }
+  
+  let firstPlayerPawn = new Pawn(635, 818, "blue");
+  let secondPlayerPawn = new Pawn(555, 88, "red");
+  
+  function createPawns() {
+    firstPlayerPawn.show();
+    secondPlayerPawn.show();
+  }
+  
+  function movePawns() {
+    firstPlayerPawn.move();
+    secondPlayerPawn.move();
+  }
