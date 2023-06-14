@@ -75,6 +75,7 @@ class Board {
           width: 100,
           height: 25,
           color: color("#6F8777"),
+          isDragged: false,
         };
 
         let playerTwoFence = {
@@ -83,6 +84,7 @@ class Board {
           width: 100,
           height: 25,
           color: color("#6F8777"),
+          isDragged: false,
         };
 
         this.totalBoardFences.push(playerOneFence, playerTwoFence);
@@ -90,11 +92,32 @@ class Board {
   }
 
   createFences() {
-    
     for (let j = 0; j < this.totalBoardFences.length; j++) {
       let playerOneFence = this.totalBoardFences[j];
       fill(playerOneFence.color);
-      rect(playerOneFence.x, playerOneFence.y, playerOneFence.width, playerOneFence.height);
+      rect(
+        playerOneFence.x,
+        playerOneFence.y,
+        playerOneFence.width,
+        playerOneFence.height
+      );
     }
+  }
+
+  moveFence() {
+      for (let j = 0; j < this.totalBoardFences.length; j++){
+        let fence = this.totalBoardFences[j];
+        if (
+          mouseX >= fence.x &&
+          mouseX <= fence.x + fence.width &&
+          mouseY >= fence.y &&
+          mouseY <= fence.y + fence.height){
+            console.log("test");
+          }
+          
+      }
+    
+
+
   }
 }
