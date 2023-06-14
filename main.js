@@ -11,8 +11,10 @@ function draw() {
   background("#789395");
   createSquares();
   createPawns();
-  keyPressed();
-  
+}
+
+function keyPressed() {
+  movePawn();
 }
 
 

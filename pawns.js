@@ -1,6 +1,6 @@
 let a = 635;
 let b = 818;
-let pawnMoveDistance = 5;
+let pawnMoveDistance = 20;
 
 
 function createPawns() {
@@ -11,7 +11,7 @@ function createPawns() {
   circle(555, 88, 40);
 }
 
-function keyPressed() {
+function movePawn() {
   if (keyCode === UP_ARROW) {
     b -= pawnMoveDistance;
   }
