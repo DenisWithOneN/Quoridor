@@ -74,7 +74,7 @@ class Board {
           y: this.rows * j * this.spacing + 28,
           width: 100,
           height: 25,
-          color: color("black"),
+          color: color("#6F8777"),
         };
 
         let playerTwoFence = {
@@ -82,7 +82,7 @@ class Board {
           y: this.rows * j * this.spacing + 28,
           width: 100,
           height: 25,
-          color: color("black"),
+          color: color("#6F8777"),
         };
 
         this.totalBoardFences.push(playerOneFence, playerTwoFence);
