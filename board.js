@@ -9,8 +9,8 @@ class Board {
   }
 
   initSquares() {
-    for (let i = 0; i <= this.columns; i++)
-      for (let j = 0; j <= this.rows; j++) {
+    for (let i = 0; i < this.columns; i++)
+      for (let j = 0; j < this.rows; j++) {
         let boardSquare = {
           x: this.columns * i * this.spacing + 150,
           y: this.rows * j * this.spacing + 60,
