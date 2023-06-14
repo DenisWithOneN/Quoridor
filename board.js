@@ -69,7 +69,7 @@ class Board {
   initFences() {
     for (let i = 0; i < this.columns; i++)
       for (let j = 0; j <= this.rows; j++) {
-        let fence = {
+        let playerOneFence = {
           x: 1050,
           y: this.rows * j * this.spacing + 28,
           width: 100,
@@ -77,16 +77,16 @@ class Board {
           color: color("black"),
         };
 
-        this.totalBoardFences.push(fence);
+        this.totalBoardFences.push(playerOneFence, playerTwoFence);
       }
   }
 
   createFences() {
     
     for (let j = 0; j < this.totalBoardFences.length; j++) {
-      let fence = this.totalBoardFences[j];
-      fill(fence.color);
-      rect(fence.x, fence.y, fence.width, fence.height);
+      let playerOneFence = this.totalBoardFences[j];
+      fill(playerOneFence.color);
+      rect(playerOneFence.x, playerOneFence.y, playerOneFence.width, playerOneFence.height);
     }
   }
 }
