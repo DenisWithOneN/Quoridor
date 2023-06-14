@@ -10,13 +10,14 @@ function setup() {
   playerNameInput = document.querySelector('#playerName');
   quoridorBoard = new Board(9,9,10,10);
   quoridorBoard.initSquares();
+  quoridorBoard.initFences();
 }
 
 function draw() {
   background("#789395");
   quoridorBoard.createSquares();
+  quoridorBoard.createFences();
   createPawns();
-  
   
 }
 
