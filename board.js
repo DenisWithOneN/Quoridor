@@ -12,7 +12,7 @@ class Board {
     for (let i = 0; i < this.columns; i++)
       for (let j = 0; j < this.rows; j++) {
         let boardSquare = {
-          x: this.columns * i * this.spacing + 150,
+          x: this.columns * i * this.spacing + 200,
           y: this.rows * j * this.spacing + 60,
           size: 60,
           color: color("#B4CFB0"),

@@ -48,8 +48,8 @@ class Pawn {
     }
   }
   
-  let firstPlayerPawn = new Pawn(630, 900, "blue");
-  let secondPlayerPawn = new Pawn(540, 90, "red");
+  let firstPlayerPawn = new Pawn(590, 810, "blue");
+  let secondPlayerPawn = new Pawn(590, 90, "red");
   
   function createPawns() {
     firstPlayerPawn.show();
