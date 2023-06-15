@@ -7,8 +7,8 @@ function setup() {
   let canvasY = (windowHeight - canvasHeight) / 2;
   canvas = createCanvas(canvasWidth, canvasHeight);
   canvas.position(canvasX, canvasY);
-  playerNameInput = document.querySelector('#playerName');
-  quoridorBoard = new Board(9,9,10,10);
+  playerNameInput = document.querySelector("#playerName");
+  quoridorBoard = new Board(9, 9, 10, 10);
   quoridorBoard.initSquares();
   quoridorBoard.initFences();
 }
@@ -18,13 +18,11 @@ function draw() {
   quoridorBoard.createSquares();
   quoridorBoard.createFences();
   createPawns();
-  
 }
 
 function keyPressed() {
   movePawns();
 }
-
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);

@@ -70,9 +70,9 @@ class Board {
     for (let i = 0; i < this.columns; i++)
       for (let j = 0; j <= this.rows; j++) {
         let playerOneFence = {
-          x: 1050,
+          x: 1020,
           y: this.rows * j * this.spacing + 28,
-          width: 100,
+          width: 130,
           height: 25,
           color: color("#6F8777"),
           isDragged: false,
@@ -81,7 +81,7 @@ class Board {
         let playerTwoFence = {
           x: 40,
           y: this.rows * j * this.spacing + 28,
-          width: 100,
+          width: 130,
           height: 25,
           color: color("#6F8777"),
           isDragged: false,
@@ -102,22 +102,5 @@ class Board {
         playerOneFence.height
       );
     }
-  }
-
-  moveFence() {
-      for (let j = 0; j < this.totalBoardFences.length; j++){
-        let fence = this.totalBoardFences[j];
-        if (
-          mouseX >= fence.x &&
-          mouseX <= fence.x + fence.width &&
-          mouseY >= fence.y &&
-          mouseY <= fence.y + fence.height){
-            console.log("test");
-          }
-          
-      }
-    
-
-
   }
 }
