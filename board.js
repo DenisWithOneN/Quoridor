@@ -74,18 +74,18 @@ class Board {
     for (let i = 0; i < this.columns; i++) {
       for (let j = 0; j <= this.rows; j++) {
         let playerOneFence = {
-          x: 1020,
+          x: 1010,
           y: this.rows * j * this.spacing + 28,
-          width: 130,
+          width: 150,
           height: 25,
           color: color("#6F8777"),
           isDragged: false,
         };
 
         let playerTwoFence = {
-          x: 40,
+          x: 30,
           y: this.rows * j * this.spacing + 28,
-          width: 130,
+          width: 150,
           height: 25,
           color: color("#6F8777"),
           isDragged: false,
@@ -97,7 +97,7 @@ class Board {
   }
 
   createFences() {
-    for (let j = 0; j < this.totalBoardFences.length; j++) {
+    for (let j = 1; j <= 20; j++) {
       let fence = this.totalBoardFences[j];
       fill(fence.color);
       rect(fence.x, fence.y, fence.width, fence.height);
@@ -105,15 +105,17 @@ class Board {
   }
 
   mousePressed() {
-    for (let j = 0; j < this.totalBoardFences.length; j++) {
+    for (let j = 0; j <= 20; j++) {
       let fence = this.totalBoardFences[j];
       if (
+        //coordinates of the fence
         mouseX >= fence.x &&
         mouseX <= fence.x + fence.width &&
         mouseY >= fence.y &&
         mouseY <= fence.y + fence.height
       ) {
         this.draggedFenceIndex = j; // Store the index of the dragged fence
+        console.log(j);
         this.offsetX = mouseX - fence.x; // Calculate the offset
         this.offsetY = mouseY - fence.y; // Calculate the offset
         break; // Exit the loop after finding the first fence
