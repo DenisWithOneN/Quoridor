@@ -12,7 +12,7 @@ class Pawn {
   }
 
   move() {
-    if (this.color === "#F2E7C9") { //playerOne (down)
+    if (this.color === "#F2E7C9") { //playerOne (down side)
       if (
         keyCode === UP_ARROW &&
         !keyIsDown(LEFT_ARROW) &&
@@ -66,17 +66,20 @@ class Pawn {
           this.x = newXRight;
         }
       }
-    } else if (this.color === "#576A6B") { //playerTwo (up)
+    } else if (this.color === "#576A6B") { //playerTwo (up side)
+
+      //move up
       if (
         keyIsDown(87) && // W key
         !keyIsDown(65) && // A key
         !keyIsDown(68) // D key
       ) {
-        // this.y -= this.pawnMoveDistance;
+        
         
       }
 
-      if (
+      //move down
+      if ( 
         keyIsDown(83) && // S key
         !keyIsDown(65) && // A key
         !keyIsDown(68) // D key
@@ -91,6 +94,7 @@ class Pawn {
         }
       }
 
+      //move left
       if (
         keyIsDown(65) && // A key
         !keyIsDown(87) && // W key
@@ -99,12 +103,16 @@ class Pawn {
         this.x -= this.pawnMoveDistance;
       }
 
+      //move right
       if (
         keyIsDown(68) && // D key
         !keyIsDown(87) && // W key
         !keyIsDown(83) // S key
       ) {
-        this.x += this.pawnMoveDistance;
+        let newXRight = this.x + this.pawnMoveDistance;
+        if(newXRight <= canvasWidth - 200){
+          this.x = newXRight;
+        }
       }
     }
   }
