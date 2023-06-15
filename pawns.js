@@ -18,7 +18,16 @@ class Pawn {
         !keyIsDown(LEFT_ARROW) &&
         !keyIsDown(RIGHT_ARROW)
       ) {
-        this.y -= this.pawnMoveDistance;
+        // this.y -= this.pawnMoveDistance;
+        let newYUp = this.y - this.pawnMoveDistance;
+        if(newYUp >= canvasHeight - (canvasHeight - 60)) {
+          this.y = newYUp;
+          if(this.y <= canvasHeight - (canvasHeight - 130) ){
+            alert('Player One won!');
+          }
+          
+        }
+        
       }
 
       if (
@@ -27,9 +36,9 @@ class Pawn {
         !keyIsDown(RIGHT_ARROW)
       ) {
 
-        let newY = this.y + this.pawnMoveDistance;
-        if(newY <= canvasHeight - 60) {
-          this.y = newY;
+        let newYDown = this.y + this.pawnMoveDistance;
+        if(newYDown <= canvasHeight - 60) {
+          this.y = newYDown;
         }
       }
 
