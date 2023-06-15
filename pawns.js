@@ -38,7 +38,11 @@ class Pawn {
         !keyIsDown(UP_ARROW) &&
         !keyIsDown(DOWN_ARROW)
       ) {
-        this.x -= this.pawnMoveDistance;
+        
+        let newX = this.x - this.pawnMoveDistance;
+        if(newX >= canvasWidth - (canvasWidth - 200)){
+          this.x = newX;
+        }
       }
 
       if (
