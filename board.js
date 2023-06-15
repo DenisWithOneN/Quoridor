@@ -134,4 +134,27 @@ class Board {
   mouseReleased() {
     this.draggedFenceIndex = -1; // Reset the dragged fence index
   }
+
+  rotate() {
+    if (keyCode === 88) {
+      if (this.draggedFenceIndex !== -1) {
+        let draggedFence = this.totalBoardFences[this.draggedFenceIndex];
+
+        // Calculate the mouse pointer position relative to the dragged fence
+        let mousePointerX = mouseX - draggedFence.x;
+        let mousePointerY = mouseY - draggedFence.y;
+
+        // Rotate the fence's position
+        let temp = draggedFence.width;
+        draggedFence.width = draggedFence.height;
+        draggedFence.height = temp;
+
+        // Adjust the fence's x and y coordinates to rotate around the mouse pointer position
+        draggedFence.x = mouseX + mousePointerX;
+        draggedFence.y = mouseY - (draggedFence.width + mousePointerX);
+      }
+    }
+  }
+
+
 }

@@ -22,6 +22,7 @@ function draw() {
 
 function keyPressed() {
   movePawns();
+  quoridorBoard.rotate();
 }
 
 function windowResized() {
