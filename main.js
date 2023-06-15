@@ -1,8 +1,8 @@
 let quoridorBoard;
+let canvasWidth = 1200;
+let canvasHeight = 900;
 
 function setup() {
-  let canvasWidth = 1200;
-  let canvasHeight = 900;
   let canvasX = (windowWidth - canvasWidth) / 2;
   let canvasY = (windowHeight - canvasHeight) / 2;
   canvas = createCanvas(canvasWidth, canvasHeight);
