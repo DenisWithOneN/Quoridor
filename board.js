@@ -7,10 +7,13 @@ class Board {
     this.totalBoardSquares = [];
     this.totalBoardRectangles = [];
     this.totalBoardFences = [];
+    this.draggedFenceIndex = -1; // Track the index of the dragged fence this.draggedFenceIndex = -1; // Track the index of the dragged fence
+    this.offsetX = 0; // Offset between the mouse and the fence's x-coordinate
+    this.offsetY = 0; // Offset between the mouse and the fence's y-coordinate
   }
 
   initSquares() {
-    for (let i = 0; i < this.columns; i++)
+    for (let i = 0; i < this.columns; i++) {
       for (let j = 0; j < this.rows; j++) {
         let boardSquare = {
           x: this.columns * i * this.spacing + 200,
@@ -38,6 +41,7 @@ class Board {
         this.totalBoardSquares.push(boardSquare);
         this.totalBoardRectangles.push(leftBoardRectangle, rightBoardRectangle);
       }
+    }
   }
 
   createSquares() {
@@ -67,7 +71,7 @@ class Board {
   }
 
   initFences() {
-    for (let i = 0; i < this.columns; i++)
+    for (let i = 0; i < this.columns; i++) {
       for (let j = 0; j <= this.rows; j++) {
         let playerOneFence = {
           x: 1020,
@@ -89,18 +93,43 @@ class Board {
 
         this.totalBoardFences.push(playerOneFence, playerTwoFence);
       }
+    }
   }
 
   createFences() {
     for (let j = 0; j < this.totalBoardFences.length; j++) {
-      let playerOneFence = this.totalBoardFences[j];
-      fill(playerOneFence.color);
-      rect(
-        playerOneFence.x,
-        playerOneFence.y,
-        playerOneFence.width,
-        playerOneFence.height
-      );
+      let fence = this.totalBoardFences[j];
+      fill(fence.color);
+      rect(fence.x, fence.y, fence.width, fence.height);
     }
+  }
+
+  mousePressed() {
+    for (let j = 0; j < this.totalBoardFences.length; j++) {
+      let fence = this.totalBoardFences[j];
+      if (
+        mouseX >= fence.x &&
+        mouseX <= fence.x + fence.width &&
+        mouseY >= fence.y &&
+        mouseY <= fence.y + fence.height
+      ) {
+        this.draggedFenceIndex = j; // Store the index of the dragged fence
+        this.offsetX = mouseX - fence.x; // Calculate the offset
+        this.offsetY = mouseY - fence.y; // Calculate the offset
+        break; // Exit the loop after finding the first fence
+      }
+    }
+  }
+
+  mouseDragged() {
+    if (this.draggedFenceIndex !== -1) {
+      let draggedFence = this.totalBoardFences[this.draggedFenceIndex];
+      draggedFence.x = mouseX - this.offsetX; // Update the fence's x-coordinate based on the offset
+      draggedFence.y = mouseY - this.offsetY; // Update the fence's y-coordinate based on the offset
+    }
+  }
+
+  mouseReleased() {
+    this.draggedFenceIndex = -1; // Reset the dragged fence index
   }
 }

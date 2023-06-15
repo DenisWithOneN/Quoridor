@@ -33,3 +33,15 @@ function updatePlayerName() {
   let playerNameDisplay = document.getElementById("playerNameDisplay");
   playerNameDisplay.innerHTML = playerName;
 }
+
+function mousePressed() {
+  quoridorBoard.mousePressed();
+}
+
+function mouseDragged() {
+  quoridorBoard.mouseDragged();
+}
+
+function mouseReleased() {
+  quoridorBoard.mouseReleased();
+}
