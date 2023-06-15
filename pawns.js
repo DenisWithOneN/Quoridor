@@ -75,7 +75,11 @@ class Pawn {
         !keyIsDown(68) // D key
       ) {
         
-        
+        let newYDown = this.y - this.pawnMoveDistance;
+        if(newYDown >= canvasHeight - (canvasHeight - 60)) {
+          this.y = newYDown;
+        }
+         
       }
 
       //move down
