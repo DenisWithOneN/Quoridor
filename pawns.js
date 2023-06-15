@@ -39,9 +39,9 @@ class Pawn {
         !keyIsDown(DOWN_ARROW)
       ) {
         
-        let newX = this.x - this.pawnMoveDistance;
-        if(newX >= canvasWidth - (canvasWidth - 200)){
-          this.x = newX;
+        let newXLeft = this.x - this.pawnMoveDistance;
+        if(newXLeft >= canvasWidth - (canvasWidth - 200)){
+          this.x = newXLeft;
         }
       }
 
@@ -50,7 +50,12 @@ class Pawn {
         !keyIsDown(UP_ARROW) &&
         !keyIsDown(DOWN_ARROW)
       ) {
-        this.x += this.pawnMoveDistance;
+        // this.x += this.pawnMoveDistance;
+
+        let newXRight = this.x + this.pawnMoveDistance;
+        if(newXRight <= canvasWidth - 200){
+          this.x = newXRight;
+        }
       }
     } else if (this.color === "#576A6B") { //playerTwo (up)
       if (
