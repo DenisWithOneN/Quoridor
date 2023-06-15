@@ -72,7 +72,8 @@ class Pawn {
         !keyIsDown(65) && // A key
         !keyIsDown(68) // D key
       ) {
-        this.y -= this.pawnMoveDistance;
+        // this.y -= this.pawnMoveDistance;
+        
       }
 
       if (
@@ -80,7 +81,14 @@ class Pawn {
         !keyIsDown(65) && // A key
         !keyIsDown(68) // D key
       ) {
-        this.y += this.pawnMoveDistance;
+
+        let newYDown = this.y + this.pawnMoveDistance;
+        if(newYDown <= canvasHeight - 60) {
+          this.y = newYDown;
+          if(this.y >= canvasHeight - 130){
+            alert('Player Two won!');
+          }
+        }
       }
 
       if (
