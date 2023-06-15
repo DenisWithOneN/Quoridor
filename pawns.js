@@ -12,7 +12,8 @@ class Pawn {
   }
 
   move() {
-    if (this.color === "#F2E7C9") { //playerOne (down side)
+    if (this.color === "#F2E7C9") {
+      //playerOne (down side)
       if (
         keyCode === UP_ARROW &&
         !keyIsDown(LEFT_ARROW) &&
@@ -20,14 +21,12 @@ class Pawn {
       ) {
         // this.y -= this.pawnMoveDistance;
         let newYUp = this.y - this.pawnMoveDistance;
-        if(newYUp >= canvasHeight - (canvasHeight - 60)) {
+        if (newYUp >= canvasHeight - (canvasHeight - 60)) {
           this.y = newYUp;
-          if(this.y <= canvasHeight - (canvasHeight - 130) ){
-            alert('Player One won!');
+          if (this.y <= canvasHeight - (canvasHeight - 130)) {
+            alert("Player One won!");
           }
-          
         }
-        
       }
 
       if (
@@ -35,9 +34,8 @@ class Pawn {
         !keyIsDown(LEFT_ARROW) &&
         !keyIsDown(RIGHT_ARROW)
       ) {
-
         let newYDown = this.y + this.pawnMoveDistance;
-        if(newYDown <= canvasHeight - 60) {
+        if (newYDown <= canvasHeight - 60) {
           this.y = newYDown;
         }
       }
@@ -47,9 +45,8 @@ class Pawn {
         !keyIsDown(UP_ARROW) &&
         !keyIsDown(DOWN_ARROW)
       ) {
-        
         let newXLeft = this.x - this.pawnMoveDistance;
-        if(newXLeft >= canvasWidth - (canvasWidth - 200)){
+        if (newXLeft >= canvasWidth - (canvasWidth - 200)) {
           this.x = newXLeft;
         }
       }
@@ -62,11 +59,12 @@ class Pawn {
         // this.x += this.pawnMoveDistance;
 
         let newXRight = this.x + this.pawnMoveDistance;
-        if(newXRight <= canvasWidth - 200){
+        if (newXRight <= canvasWidth - 200) {
           this.x = newXRight;
         }
       }
-    } else if (this.color === "#576A6B") { //playerTwo (up side)
+    } else if (this.color === "#576A6B") {
+      //playerTwo (up side)
 
       //move up
       if (
@@ -74,26 +72,23 @@ class Pawn {
         !keyIsDown(65) && // A key
         !keyIsDown(68) // D key
       ) {
-        
         let newYDown = this.y - this.pawnMoveDistance;
-        if(newYDown >= canvasHeight - (canvasHeight - 60)) {
+        if (newYDown >= canvasHeight - (canvasHeight - 60)) {
           this.y = newYDown;
         }
-         
       }
 
       //move down
-      if ( 
+      if (
         keyIsDown(83) && // S key
         !keyIsDown(65) && // A key
         !keyIsDown(68) // D key
       ) {
-
         let newYDown = this.y + this.pawnMoveDistance;
-        if(newYDown <= canvasHeight - 60) {
+        if (newYDown <= canvasHeight - 60) {
           this.y = newYDown;
-          if(this.y >= canvasHeight - 130){
-            alert('Player Two won!');
+          if (this.y >= canvasHeight - 130) {
+            alert("Player Two won!");
           }
         }
       }
@@ -105,7 +100,7 @@ class Pawn {
         !keyIsDown(83) // S key
       ) {
         let newXLeft = this.x - this.pawnMoveDistance;
-        if(newXLeft >= canvasWidth - (canvasWidth - 200)){
+        if (newXLeft >= canvasWidth - (canvasWidth - 200)) {
           this.x = newXLeft;
         }
       }
@@ -117,12 +112,13 @@ class Pawn {
         !keyIsDown(83) // S key
       ) {
         let newXRight = this.x + this.pawnMoveDistance;
-        if(newXRight <= canvasWidth - 200){
+        if (newXRight <= canvasWidth - 200) {
           this.x = newXRight;
         }
       }
     }
   }
+
 }
 
 let firstPlayerPawn = new Pawn(590, 810, "#F2E7C9");

@@ -75,7 +75,7 @@ class Board {
       for (let j = 0; j <= this.rows; j++) {
         let playerOneFence = {
           x: 1010,
-          y: this.rows * j * this.spacing + 28,
+          y: this.rows * j * this.spacing + 25,
           width: 150,
           height: 30,
           color: color("#6F8777"),
@@ -84,7 +84,7 @@ class Board {
 
         let playerTwoFence = {
           x: 30,
-          y: this.rows * j * this.spacing + 28,
+          y: this.rows * j * this.spacing + 25,
           width: 150,
           height: 30,
           color: color("#6F8777"),
@@ -167,6 +167,8 @@ class Board {
       }
     }
   }
-
-
 }
+
+
+
+
