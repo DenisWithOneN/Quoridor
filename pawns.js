@@ -104,7 +104,10 @@ class Pawn {
         !keyIsDown(87) && // W key
         !keyIsDown(83) // S key
       ) {
-        this.x -= this.pawnMoveDistance;
+        let newXLeft = this.x - this.pawnMoveDistance;
+        if(newXLeft >= canvasWidth - (canvasWidth - 200)){
+          this.x = newXLeft;
+        }
       }
 
       //move right
