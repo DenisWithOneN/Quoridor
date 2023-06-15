@@ -77,7 +77,7 @@ class Board {
           x: 1010,
           y: this.rows * j * this.spacing + 28,
           width: 150,
-          height: 25,
+          height: 30,
           color: color("#6F8777"),
           isDragged: false,
         };
@@ -86,7 +86,7 @@ class Board {
           x: 30,
           y: this.rows * j * this.spacing + 28,
           width: 150,
-          height: 25,
+          height: 30,
           color: color("#6F8777"),
           isDragged: false,
         };
@@ -132,6 +132,18 @@ class Board {
   }
 
   mouseReleased() {
+    if (this.draggedFenceIndex !== -1) {
+      let draggedFence = this.totalBoardFences[this.draggedFenceIndex];
+
+      // Snap the fence's position to the nearest square
+      let snappedX = Math.round(draggedFence.x / this.spacing) * this.spacing;
+      let snappedY = Math.round(draggedFence.y / this.spacing) * this.spacing;
+
+      // Update the fence's position
+      draggedFence.x = snappedX;
+      draggedFence.y = snappedY;
+    }
+
     this.draggedFenceIndex = -1; // Reset the dragged fence index
   }
 
